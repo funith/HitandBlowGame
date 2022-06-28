@@ -25,7 +25,12 @@ def hitblow(command, ans):
 
 
 
-print("Hit & Blow Game")
+print("[Hit & Blow Game] \n")
+print("指定された桁数の数字において．数当てゲームを行います")
+print("各桁ごとに, 桁も数値も当てられれば「Hit」,桁が異なり数値だけが当てられれば「Blow」と表示されます ")
+print("間違えるたびに1つずつヒントが与えられます")
+print("できるだけ少ない試行回数で当てられるよう頑張りましょう!!! \n")
+
 digit = input("遊びたい桁数を入力して下さい: ")
 ans = generator(int(digit))
 cont = True
