@@ -26,17 +26,17 @@ def hitblow(command, ans):
 
 
 print("Hit & Blow Game")
-digit = input("Please, enter the number of digits you want to play: ")
+digit = input("遊びたい桁数を入力して下さい: ")
 ans = generator(int(digit))
 cont = True
 count = 0
 print("Game Start!")
 while cont:
     count += 1
-    command = input("enter the {} digits number > ".format(digit))
+    command = input("{}桁の数字を入力してください > ".format(digit))
     your_ans = [int(command[i]) for i in range(len(command))]
     [hit, blow] = hitblow(your_ans, ans)
     print("{}: {} Hit, {} Blow".format(command, hit, blow))
     if hit == len(ans):
-        print("Congratulations!!! You took {} steps.".format(count))
+        print("おめでとうございます!正解です!!! You took {} steps.".format(count))
         cont = False
