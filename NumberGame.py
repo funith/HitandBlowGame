@@ -1,4 +1,3 @@
-from operator import length_hint
 import random
 import numpy as np
 
@@ -13,6 +12,8 @@ def generator(length):
         else:
             ans += [rand]
     return ans
+
+
 
 
 
@@ -47,7 +48,7 @@ while cont:
     your_ans = [int(command[i]) for i in range(len(command))]
     [hit, blow] = hitblow(your_ans, ans)
     print("{}: {} Hit, {} Blow".format(command, hit, blow))
-
+    answer = int("".join([str(j) for j in (ans)]))
 
 
     if hit == len(ans):
@@ -56,14 +57,23 @@ while cont:
     
     if hit != len(ans):
         if count < 6:
-            if your_ans > answer:
+            if your_ans > ans:
                 print("ヒント:もっと小さな数です!")
-            if your_ans < answer:
+            if your_ans < ans:
                 print("ヒント:もっと大きな数です！")
+
+        if count == 2:
+            if answer %2 == 0:
+                print("ヒント:答えは偶数です")
+            if answer %2 != 0:
+                print("ヒント:答えは奇数です")
+
+
+
 
         if count == 6:
             print("Game Over!!!!!HAHAHA!!!!!!!")
-            print("正解は%sです!" %ans)
+            print("正解は%dです!" %(answer) )
             break
         
 
