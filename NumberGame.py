@@ -47,9 +47,8 @@ while cont:
         print("おめでとうございます!正解です!!! You took {} steps.".format(count))
         cont = False
 
-    if count > 4:
-            print("Game Over!!!!!")
-            print("正解は%dです!!!" %answer)
+    if count > 5:
+            print("Game Over!!!!!HAHAHA!!!!!!!")
             break
         
 
