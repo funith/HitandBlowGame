@@ -1,5 +1,6 @@
 from operator import length_hint
 import random
+from re import I
 
 from scipy import rand
 answer = random.randint(100, 999)
@@ -46,8 +47,19 @@ while cont:
     if hit == len(ans):
         print("おめでとうございます!正解です!!! You took {} steps.".format(count))
         cont = False
-
-    if count > 5:
+    
+    if hit != len(ans):
+        if count == 1:
+            if your_ans > ans:
+                print("もっと小さい数です!")
+            if your_ans < ans:
+                print("もっと大きい数です！")
+        if count == 4:
+            if your_ans > ans:
+                print("もっと小さい数です!")
+            if your_ans < ans:
+                print("もっと大きい数です！")
+        if count == 6:
             print("Game Over!!!!!HAHAHA!!!!!!!")
             break
         
