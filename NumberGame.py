@@ -14,10 +14,6 @@ def generator(length):
     return ans
 
 
-
-
-
-
 def hitblow(command, ans):
     hit = 0
     blow = 0
@@ -105,9 +101,6 @@ while cont:
             else:
                 print("もうヒントはありません")      
              
-
-
-
         if count == 6:
             print("Game Over!!!!!HAHAHA!!!!!!!")
             print("正解は%dです!" %(answer) )
