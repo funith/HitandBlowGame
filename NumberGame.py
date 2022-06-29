@@ -67,7 +67,44 @@ while cont:
                 print("ヒント:答えは偶数です")
             if answer %2 != 0:
                 print("ヒント:答えは奇数です")
+        if count == 3:
+            if answer %3 == 0:
+                print("ヒント:答えは3の倍数です")
+            if answer %3 != 0:
+                print("ヒント:答えは3の倍数ではありません")
+        
+        if count == 4:
+            if answer %7 == 0:
+                print("ヒント:答えは7の倍数です")
+            if answer %7 != 0:
+                print("ヒント:答えは7の倍数ではありません")
 
+        if count == 5:
+            if answer %11 == 0:
+                print("大ヒント:答えは11の倍数です")
+            if answer %13 == 0:
+                print("大ヒント:答えは13の倍数です")
+            if answer %17 == 0:
+                print("大ヒント:答えは17の倍数です")
+            if answer %19 == 0:
+                print("大ヒント:答えは19の倍数です")
+            if answer %23 == 0:
+                print("大ヒント:答えは23の倍数です")
+            if answer %29 == 0:
+                print("大ヒント:答えは29の倍数です")  
+            if answer %31 == 0:
+                print("大ヒント:答えは31の倍数です")  
+            if answer %37 == 0:
+                print("大ヒント:答えは37の倍数です")
+            if answer %41 == 0:
+                print("大ヒント:答えは41の倍数です")
+            if answer %43 == 0:
+                print("大ヒント:答えは43の倍数です")
+            if answer %47 == 0:
+                print("大ヒント:答えは47の倍数です")
+            else:
+                print("もうヒントはありません")      
+             
 
 
 
