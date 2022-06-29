@@ -1,9 +1,9 @@
 from operator import length_hint
 import random
-from re import I
+import numpy as np
 
 from scipy import rand
-answer = random.randint(100, 999)
+##answer = random.randint(100, 999)
 def generator(length):
     ans = []
     while len(ans) < length:
@@ -13,6 +13,8 @@ def generator(length):
         else:
             ans += [rand]
     return ans
+
+
 
 
 def hitblow(command, ans):
@@ -30,7 +32,7 @@ def hitblow(command, ans):
 print("[Hit & Blow Game] \n")
 print("指定された桁数の数字において．数当てゲームを行います")
 print("各桁ごとに 桁も数値も当てられれば「Hit, 桁が異なり数値だけが当てられれば「Blow」と表示されます ")
-print("間違えるたびに1つずつヒントが与えられます 5回以内に当てられないとGame Over!")
+print("間違えるたびに1つずつヒントが与えられます 6回以内に当てられないとGame Over!")
 print("できるだけ少ない試行回数で当てられるよう頑張りましょう!!! \n")
 
 digit = input("遊びたい桁数を入力して下さい: ")
@@ -41,26 +43,27 @@ print("Game Start!")
 while cont:
     count += 1
     command = input("{}桁の数字を入力してください > ".format(digit))
+    answer = [int(ans[i]) for i in range(len(ans))]
     your_ans = [int(command[i]) for i in range(len(command))]
     [hit, blow] = hitblow(your_ans, ans)
     print("{}: {} Hit, {} Blow".format(command, hit, blow))
+
+
+
     if hit == len(ans):
-        print("おめでとうございます!正解です!!! You took {} steps.".format(count))
+        print("おめでとうございます!正解です!!! 正解までに {} 回試行しました.".format(count))
         cont = False
     
     if hit != len(ans):
-        if count == 1:
-            if your_ans > ans:
-                print("もっと小さい数です!")
-            if your_ans < ans:
-                print("もっと大きい数です！")
-        if count == 4:
-            if your_ans > ans:
-                print("もっと小さい数です!")
-            if your_ans < ans:
-                print("もっと大きい数です！")
+        if count < 6:
+            if your_ans > answer:
+                print("ヒント:もっと小さな数です!")
+            if your_ans < answer:
+                print("ヒント:もっと大きな数です！")
+
         if count == 6:
             print("Game Over!!!!!HAHAHA!!!!!!!")
+            print("正解は%sです!" %ans)
             break
         
 
